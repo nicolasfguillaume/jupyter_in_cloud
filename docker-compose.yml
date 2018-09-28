@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+
+  web:
+    build: .
+    command: jupyter notebook test.ipynb --no-browser --ip=0.0.0.0 --allow-root  # --allow-root si user=root
+    ports:
+      - 5001:8888
