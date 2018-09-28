@@ -4,6 +4,7 @@ services:
 
   web:
     build: .
+    # read more: https://jupyter-notebook.readthedocs.io/en/stable/public_server.html
     command: jupyter notebook test.ipynb --no-browser --ip=0.0.0.0 --allow-root  # --allow-root si user=root
     ports:
       - 5001:8888
