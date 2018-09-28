@@ -13,6 +13,9 @@ COPY . /code
 
 WORKDIR /code
 
-# RUN pip install -r requirements.txt
-
+# to allow setting up a password
 RUN jupyter notebook --generate-config
+
+# read only
+# a better way would be to modify jupyter_notebook_config.py and add Jupyter.notebook.writable = false;
+RUN chmod a-w *.ipynb
